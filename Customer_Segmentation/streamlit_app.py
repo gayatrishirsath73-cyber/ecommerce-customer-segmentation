@@ -34,22 +34,14 @@ st.write(
 # PATHS
 # ============================================================
 
-MODEL_PATH = "artifacts/models"
+from pathlib import Path
 
-MODEL_FILE = os.path.join(
-    MODEL_PATH,
-    "kmeans_model.joblib"
-)
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "artifacts" / "models"
 
-SCALER_FILE = os.path.join(
-    MODEL_PATH,
-    "scaler.joblib"
-)
-
-IMPUTER_FILE = os.path.join(
-    MODEL_PATH,
-    "imputer.joblib"
-)
+MODEL_FILE = MODEL_PATH / "kmeans_model.joblib"
+SCALER_FILE = MODEL_PATH / "scaler.joblib"
+IMPUTER_FILE = MODEL_PATH / "imputer.joblib"
 
 
 # ============================================================
