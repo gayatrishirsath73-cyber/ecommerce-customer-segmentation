@@ -1,0 +1,26 @@
+Column_Name,Data_Type,Description,Example_Value,Recommended_Use
+Customer_ID,String,Unique customer identifier,CUST_00001,Identification only; do not use for clustering
+Age,Integer,Customer age in years,34,Demographic profiling
+Gender,Categorical,Customer gender,Female,Primarily for post-cluster profiling
+City_Tier,Categorical,City market tier,Tier_1,Primarily for post-cluster profiling
+Annual_Income,Numeric (INR),Estimated annual customer income,850000,Potential clustering feature; scale before modeling
+Customer_Tenure_Months,Integer,Months since registration,28,Customer maturity/loyalty
+Total_Orders,Integer,Completed orders during observation period,42,Core purchasing behavior
+Total_Spending,Numeric (INR),Total amount spent,125450,Core customer-value feature
+Average_Order_Value,Numeric (INR),Average spend per completed order,2987,Basket-value behavior
+Website_Visits_Per_Month,Integer,Average monthly website visits,18,Digital engagement
+Mobile_App_Usage_Rate,Numeric (0-1),Share of interactions via mobile app,0.82,Digital engagement
+Discount_Usage_Rate,Numeric (0-1),Share of orders using discounts/coupons,0.68,Discount sensitivity
+Cart_Abandonment_Rate,Numeric (0-1),Share of carts not converted to orders,0.25,Browsing/conversion behavior
+Return_Rate,Numeric (0-1),Share of purchased orders returned,0.08,Return behavior
+Average_Days_Between_Orders,Numeric (days),Average days between purchases,18.5,Purchase frequency
+Product_Categories_Purchased,Integer,Number of distinct categories purchased,5,Product diversity
+Electronics_Spending,Numeric (INR),Total electronics spending,42000,Cluster profiling
+Fashion_Spending,Numeric (INR),Total fashion spending,18500,Cluster profiling
+Home_Kitchen_Spending,Numeric (INR),Total home/kitchen spending,22000,Cluster profiling
+Beauty_Spending,Numeric (INR),Total beauty/personal-care spending,8500,Cluster profiling
+Customer_Support_Calls,Integer,Customer support contacts,3,Service-friction indicator
+Loyalty_Points,Integer,Current loyalty/reward points,4850,Engagement/value proxy
+Last_Purchase_Days_Ago,Integer,Days since most recent purchase,12,Recency/at-risk indicator
+Preferred_Payment_Method,Categorical,Most frequently used payment method,Credit Card,Post-cluster profiling
+Marketing_Response_Rate,Numeric (0-1),Share of campaigns resulting in purchase,0.42,Marketing responsiveness

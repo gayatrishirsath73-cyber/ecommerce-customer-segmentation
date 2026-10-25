@@ -1,0 +1,59 @@
+[2026-10-06 23:24:13,785] 76 ecommerce_customer_segmentation - INFO - ==================================================
+[2026-10-06 23:24:13,785] 80 ecommerce_customer_segmentation - INFO - E-Commerce Customer Segmentation Pipeline Started
+[2026-10-06 23:24:13,785] 84 ecommerce_customer_segmentation - INFO - ==================================================
+[2026-10-06 23:24:13,785] 92 ecommerce_customer_segmentation - INFO - STEP 1: Starting data ingestion.
+[2026-10-06 23:24:13,785] 14 ecommerce_customer_segmentation - INFO - Starting data ingestion.
+[2026-10-06 23:24:13,874] 23 ecommerce_customer_segmentation - INFO - Dataset loaded successfully. Shape: (10000, 25)
+[2026-10-06 23:24:13,914] 32 ecommerce_customer_segmentation - INFO - Number of duplicate rows: 0
+[2026-10-06 23:24:14,012] 63 ecommerce_customer_segmentation - INFO - Processed dataset saved at: artifacts/data/processed/processed_customer_data.csv
+[2026-10-06 23:24:14,013] 101 ecommerce_customer_segmentation - INFO - Data ingestion completed. Shape: (10000, 25)
+[2026-10-06 23:24:14,013] 110 ecommerce_customer_segmentation - INFO - STEP 2: Starting EDA.
+[2026-10-06 23:24:14,013] 26 ecommerce_customer_segmentation - INFO - Generating dataset overview.
+[2026-10-06 23:24:14,075] 46 ecommerce_customer_segmentation - INFO - Performing missing value analysis.
+[2026-10-06 23:24:14,086] 75 ecommerce_customer_segmentation - INFO - Numerical columns: ['Age', 'Annual_Income', 'Customer_Tenure_Months', 'Total_Orders', 'Total_Spending', 'Average_Order_Value', 'Website_Visits_Per_Month', 'Mobile_App_Usage_Rate', 'Discount_Usage_Rate', 'Cart_Abandonment_Rate', 'Return_Rate', 'Average_Days_Between_Orders', 'Product_Categories_Purchased', 'Electronics_Spending', 'Fashion_Spending', 'Home_Kitchen_Spending', 'Beauty_Spending', 'Customer_Support_Calls', 'Loyalty_Points', 'Last_Purchase_Days_Ago', 'Marketing_Response_Rate']
+[2026-10-06 23:24:14,086] 79 ecommerce_customer_segmentation - INFO - Categorical columns: ['Customer_ID', 'Gender', 'City_Tier', 'Preferred_Payment_Method']
+[2026-10-06 23:24:14,086] 91 ecommerce_customer_segmentation - INFO - Generating numerical summary.
+[2026-10-06 23:24:14,152] 110 ecommerce_customer_segmentation - INFO - Generating correlation heatmap.
+[2026-10-06 23:24:15,614] 144 ecommerce_customer_segmentation - INFO - Correlation heatmap saved at artifacts/visuals\correlation_heatmap.png
+[2026-10-06 23:24:15,615] 160 ecommerce_customer_segmentation - INFO - Generating univariate analysis plots.
+[2026-10-06 23:24:24,063] 197 ecommerce_customer_segmentation - INFO - Univariate analysis completed.
+[2026-10-06 23:24:24,063] 211 ecommerce_customer_segmentation - INFO - Generating boxplots.
+[2026-10-06 23:24:30,924] 247 ecommerce_customer_segmentation - INFO - Boxplot analysis completed.
+[2026-10-06 23:24:30,924] 261 ecommerce_customer_segmentation - INFO - Generating categorical analysis.
+[2026-10-06 23:27:44,537] 302 ecommerce_customer_segmentation - INFO - Categorical analysis completed.
+[2026-10-06 23:27:44,537] 149 ecommerce_customer_segmentation - INFO - EDA completed successfully.
+[2026-10-06 23:27:44,537] 158 ecommerce_customer_segmentation - INFO - STEP 3: Preparing clustering model.
+[2026-10-06 23:27:44,538] 172 ecommerce_customer_segmentation - INFO - STEP 4: Preparing clustering features.
+[2026-10-06 23:27:44,538] 51 ecommerce_customer_segmentation - INFO - Preparing clustering features.
+[2026-10-06 23:27:44,767] 81 ecommerce_customer_segmentation - INFO - Feature imputation and scaling completed.
+[2026-10-06 23:27:44,768] 190 ecommerce_customer_segmentation - INFO - STEP 5: Running elbow analysis.
+[2026-10-06 23:27:44,768] 101 ecommerce_customer_segmentation - INFO - Running K-Means elbow analysis.
+[2026-10-06 23:27:47,388] 159 ecommerce_customer_segmentation - INFO - Elbow plot saved at artifacts/visuals\elbow_plot.png
+[2026-10-06 23:27:47,388] 204 ecommerce_customer_segmentation - INFO - STEP 6: Running silhouette analysis.
+[2026-10-06 23:27:47,389] 175 ecommerce_customer_segmentation - INFO - Running silhouette analysis.
+[2026-10-06 23:27:52,328] 200 ecommerce_customer_segmentation - INFO - K=2, Silhouette Score=0.2833
+[2026-10-06 23:27:56,875] 200 ecommerce_customer_segmentation - INFO - K=3, Silhouette Score=0.2391
+[2026-10-06 23:28:01,169] 200 ecommerce_customer_segmentation - INFO - K=4, Silhouette Score=0.2562
+[2026-10-06 23:28:04,535] 200 ecommerce_customer_segmentation - INFO - K=5, Silhouette Score=0.2550
+[2026-10-06 23:28:08,904] 200 ecommerce_customer_segmentation - INFO - K=6, Silhouette Score=0.2333
+[2026-10-06 23:28:13,111] 200 ecommerce_customer_segmentation - INFO - K=7, Silhouette Score=0.2210
+[2026-10-06 23:28:17,490] 200 ecommerce_customer_segmentation - INFO - K=8, Silhouette Score=0.2266
+[2026-10-06 23:28:21,731] 200 ecommerce_customer_segmentation - INFO - K=9, Silhouette Score=0.1916
+[2026-10-06 23:28:26,088] 200 ecommerce_customer_segmentation - INFO - K=10, Silhouette Score=0.1891
+[2026-10-06 23:28:26,938] 231 ecommerce_customer_segmentation - INFO - Optimal K : 7
+[2026-10-06 23:28:26,938] 245 ecommerce_customer_segmentation - INFO - STEP 8: Running hierarchical clustering.
+[2026-10-06 23:28:26,938] 251 ecommerce_customer_segmentation - INFO - Running hierarchical clustering.
+[2026-10-06 23:28:35,925] 296 ecommerce_customer_segmentation - INFO - Dendrogram saved at artifacts/visuals\hierarchical_dendrogram.png
+[2026-10-06 23:28:35,926] 258 ecommerce_customer_segmentation - INFO - STEP 9: Running DBSCAN.
+[2026-10-06 23:28:35,926] 313 ecommerce_customer_segmentation - INFO - Running DBSCAN.
+[2026-10-06 23:28:36,279] 330 ecommerce_customer_segmentation - INFO - DBSCAN clusters: {np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10), np.int64(-1)}
+[2026-10-06 23:28:36,282] 282 ecommerce_customer_segmentation - INFO - STEP 10: Training final K-Means model.
+[2026-10-06 23:28:36,282] 346 ecommerce_customer_segmentation - INFO - Training final K-Means model with K=7
+[2026-10-06 23:28:36,576] 374 ecommerce_customer_segmentation - INFO - K-Means model saved at artifacts/models\kmeans_model.joblib
+[2026-10-06 23:28:36,576] 299 ecommerce_customer_segmentation - INFO - STEP 11: Saving preprocessing objects.
+[2026-10-06 23:28:36,587] 413 ecommerce_customer_segmentation - INFO - Imputer and scaler saved successfully.
+[2026-10-06 23:28:36,588] 313 ecommerce_customer_segmentation - INFO - STEP 12: Creating cluster profiles.
+[2026-10-06 23:28:36,588] 429 ecommerce_customer_segmentation - INFO - Creating cluster profile.
+[2026-10-06 23:28:36,610] 475 ecommerce_customer_segmentation - INFO - Cluster profile saved at artifacts/models\cluster_profile.csv
+[2026-10-06 23:28:36,853] 341 ecommerce_customer_segmentation - INFO - Segmented customer data saved at artifacts/data/processed/segmented_customer_data.csv
+[2026-10-06 23:28:36,937] 377 ecommerce_customer_segmentation - INFO - E-Commerce Customer Segmentation Pipeline completed successfully.
